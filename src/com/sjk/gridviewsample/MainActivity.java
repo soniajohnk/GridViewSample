@@ -15,6 +15,14 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new GridAdapter(this));
+        
+        gridview.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                    int position, long id) {
+                Toast.makeText(getApplicationContext(), "Position " + position,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
